@@ -47,8 +47,8 @@
             <a href="http://validator.w3.org/check?uri=referer"><img
                     src="http://www.pdsolution.it/img/logo_1.jpg"
                 alt="Valid XHTML 1.1" height="15" width="80" /></a><br/>
-            <a href="http://www.hostingjava.it/-SaThot/mail/me"><img
-                    src="http://www.hostingjava.it/-SaThot/image/mail.gif"
+            <a href="/mail/me"><img
+                    src="/images/mail.gif"
                 alt="mail me" height="15" width="80" /></a>
         </p>
     </body>
