@@ -1,10 +1,5 @@
-<%-- 
-    Document   : index
-    Created on : 1-feb-2008, 15.35.01
-    Author     : Manny
---%>
-
-<%@page contentType="application/xhtml+xml" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.Random"%>
 <%
         Random r = new Random(System.currentTimeMillis());
@@ -15,41 +10,41 @@
         for (int i = 0; i < 8; i++) {
             next += hira[r.nextInt(hira.length)];
         }
-%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>Contact us</title>
-    </head>
-    <body><div class="mail">
-            <%for (int i = r.nextInt(150); i >= 0; i--) {
-            String s = "";
+%><html>
+  <head>
+    <title>Contact us</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="/stylesheets/css.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <article>
+      <%
+        for (int i = r.nextInt(150); i >= 0; i--) {
+          String s = "";
+          for (int j = r.nextInt(5) + 1; j >= 0; j--) {
+            s += hira[r.nextInt(hira.length)];
+          }
+          for (int k = r.nextInt(3); k > 0; k--) {
+            s += sep[r.nextInt(sep.length)];
             for (int j = r.nextInt(5) + 1; j >= 0; j--) {
-                s += hira[r.nextInt(hira.length)];
+              s += hira[r.nextInt(hira.length)];
             }
-            for (int k = r.nextInt(3); k > 0; k--) {
-                s += sep[r.nextInt(sep.length)];
-            for (int j = r.nextInt(5) + 1; j >= 0; j--) {
-                s += hira[r.nextInt(hira.length)];
-            }
-            }
-            if(r.nextBoolean()){s += ""+r.nextInt(1000);}
-            s += "@";
-            for (int j = r.nextInt(5) + 1; j >= 0; j--) {
-                s += hira[r.nextInt(hira.length)];
-            }
-            s += dom[r.nextInt(dom.length)];
-            %><a href="mailto:<%=s%>"><%=s%></a><br/><%}%>
-        <a href="<%=next%>">email</a></div>
-        <p style="float:right">
-            <a href="http://validator.w3.org/check?uri=referer"><img
-                    src="http://www.pdsolution.it/img/logo_1.jpg"
-                alt="Valid XHTML 1.1" height="15" width="80" /></a><br/>
-            <a href="/mail/me"><img
-                    src="/images/mail.gif"
-                alt="mail me" height="15" width="80" /></a>
-        </p>
-    </body>
+          }
+          if(r.nextBoolean()){s += ""+r.nextInt(1000);}
+          s += "@";
+          for (int j = r.nextInt(5) + 1; j >= 0; j--) {
+            s += hira[r.nextInt(hira.length)];
+          }
+          s += dom[r.nextInt(dom.length)];
+    %>
+      <a href="mailto:<%=s%>"><%=s%></a><br/><%}%>
+      <a href="<%=next%>">email</a>
+    </article>
+    <footer>
+      <a href="/mail/me">
+        <img src="/images/mail.gif" alt="mail me"/>
+      </a>
+    </footer>
+  </body>
 </html>
